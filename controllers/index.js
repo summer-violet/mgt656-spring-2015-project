@@ -8,7 +8,7 @@ function index (request, response) {
   var contextData = {
     'title': 'MGT 656',
     'tagline': 'You are doomed (just kidding).',
-    'events': events.all ,
+    'events': []
   };
   for(var i=0; i < events.all.length; i++){
     var event = events.all[i];
