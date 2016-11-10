@@ -17,3 +17,8 @@ footer{
   border: 1px solid #ddd;
   margin: 2em 0;
 }
+
+#-headshot{
+  height:15%;
+  width:15%;
+}
