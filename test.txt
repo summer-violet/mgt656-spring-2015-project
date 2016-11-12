@@ -16,51 +16,51 @@
      ✓ should have a link to create a new event
    
    The API
-     1) should return an array of upcoming events in JSON format
-     2) should allow for searching events by title
+     ✓ should return an array of upcoming events in JSON format
+     ✓ should allow for searching events by title
    
    The about page
      ✓ should have people on it
      ✓ should have a picture of each person
    
    The event detail pages
-     3) should exist for each event and should have title, image, etc
-     4) should allow Yale users to RSVP
-     5) should reject RSVPs from non-Yale addresses
+     1) should exist for each event and should have title, image, etc
+     2) should allow Yale users to RSVP
+     3) should reject RSVPs from non-Yale addresses
    
    The new event creation page
      ✓ should exist
      ✓ should have a form that can be posted back
      ✓ should have appropriate form fields and labels
-     6) should use select inputs for year, month, day, hour and minute form elements.
-     7) should have the appropriate options for select elements
+     4) should use select inputs for year, month, day, hour and minute form elements.
+     5) should have the appropriate options for select elements
    
    The form for creating new events
-     8) should display errors to the user when the year is not an integer
-     9) should display errors to the user when the year is more than 2016
-     10) should display errors to the user when the year is less than 2015
-     11) should display errors to the user when the month is not an integer
-     12) should display errors to the user when the month is more than 11
-     13) should display errors to the user when the month is less than 0
-     14) should display errors to the user when the day is not an integer
-     15) should display errors to the user when the day is more than 31
-     16) should display errors to the user when the day is less than 1
-     17) should display errors to the user when the hour is not an integer
-     18) should display errors to the user when the hour is more than 23
-     19) should display errors to the user when the hour is less than 0
-     20) should display errors to the user when the image is not a gif or png
-     21) should display errors to the user when the image is not a URL
-     22) should display errors to the user when the location is too long
-     23) should display errors to the user when the location is empty
-     24) should display errors to the user when the title is too long
-     25) should display errors to the user when the title is empty
-     26) should redirect the user to the event detail page if the form is valid
+     ✓ should display errors to the user when the year is not an integer
+     ✓ should display errors to the user when the year is more than 2016
+     ✓ should display errors to the user when the year is less than 2015
+     ✓ should display errors to the user when the month is not an integer
+     ✓ should display errors to the user when the month is more than 11
+     ✓ should display errors to the user when the month is less than 0
+     ✓ should display errors to the user when the day is not an integer
+     ✓ should display errors to the user when the day is more than 31
+     ✓ should display errors to the user when the day is less than 1
+     ✓ should display errors to the user when the hour is not an integer
+     ✓ should display errors to the user when the hour is more than 23
+     ✓ should display errors to the user when the hour is less than 0
+     6) should display errors to the user when the image is not a gif or png
+     7) should display errors to the user when the image is not a URL
+     8) should display errors to the user when the location is too long
+     9) should display errors to the user when the location is empty
+     ✓ should display errors to the user when the title is too long
+     ✓ should display errors to the user when the title is empty
+     10) should redirect the user to the event detail page if the form is valid
 
-   Executed 43 tests in 7 suites in 1s 602ms
-       17 passes
-       26 failed
+   Executed 43 tests in 7 suites in 1s 555ms
+       33 passes
+       10 failed
    
-   26) The form for creating new events should redirect the user to the event detail page if the form is valid
+   10) The form for creating new events should redirect the user to the event detail page if the form is valid
    
        Bad redirect location, it should look like events/4, events/5, etc: expected '/events' to match /events\/\d+\/?$/
        
@@ -90,67 +90,7 @@
        
        at endReadableNT (_stream_readable.js:921:12)
    
-   25) The form for creating new events should display errors to the user when the title is empty
-   
-       Error page should contain form errors.
-       
-       at Request._callback (test/test.js:481:16)
-       
-       480 |         var formErrors = window.document.querySelector('ul.form-errors');
-       481 |         assert.ok(formErrors, 'Error page should contain form errors.');
-       482 |         var errorListItems = formErrors.getElementsByTagName('li');
-       
-       at Request.self.callback (node_modules/request/request.js:187:22)
-       
-       186 |       self._callbackCalled = true
-       187 |       self._callback.apply(self, arguments)
-       188 |     }
-       
-       at Request.<anonymous> (node_modules/request/request.js:1048:10)
-       
-       1047 |     }
-       1048 |     self.emit('complete', response, response.body)
-       1049 |   })
-       
-       at IncomingMessage.<anonymous> (node_modules/request/request.js:969:12)
-       
-       968 |     responseContent.on('end', function (chunk) {
-       969 |       self.emit('end', chunk)
-       970 |     })
-       
-       at endReadableNT (_stream_readable.js:921:12)
-   
-   24) The form for creating new events should display errors to the user when the title is too long
-   
-       Error page should contain form errors.
-       
-       at Request._callback (test/test.js:481:16)
-       
-       480 |         var formErrors = window.document.querySelector('ul.form-errors');
-       481 |         assert.ok(formErrors, 'Error page should contain form errors.');
-       482 |         var errorListItems = formErrors.getElementsByTagName('li');
-       
-       at Request.self.callback (node_modules/request/request.js:187:22)
-       
-       186 |       self._callbackCalled = true
-       187 |       self._callback.apply(self, arguments)
-       188 |     }
-       
-       at Request.<anonymous> (node_modules/request/request.js:1048:10)
-       
-       1047 |     }
-       1048 |     self.emit('complete', response, response.body)
-       1049 |   })
-       
-       at IncomingMessage.<anonymous> (node_modules/request/request.js:969:12)
-       
-       968 |     responseContent.on('end', function (chunk) {
-       969 |       self.emit('end', chunk)
-       970 |     })
-       
-       at endReadableNT (_stream_readable.js:921:12)
-   
-   23) The form for creating new events should display errors to the user when the location is empty
+   9) The form for creating new events should display errors to the user when the location is empty
    
        Expected status code 200, but got302
        
@@ -185,7 +125,7 @@
        
        at endReadableNT (_stream_readable.js:921:12)
    
-   22) The form for creating new events should display errors to the user when the location is too long
+   8) The form for creating new events should display errors to the user when the location is too long
    
        Expected status code 200, but got302
        
@@ -220,7 +160,7 @@
        
        at endReadableNT (_stream_readable.js:921:12)
    
-   21) The form for creating new events should display errors to the user when the image is not a URL
+   7) The form for creating new events should display errors to the user when the image is not a URL
    
        Expected status code 200, but got302
        
@@ -255,7 +195,7 @@
        
        at endReadableNT (_stream_readable.js:921:12)
    
-   20) The form for creating new events should display errors to the user when the image is not a gif or png
+   6) The form for creating new events should display errors to the user when the image is not a gif or png
    
        Expected status code 200, but got302
        
@@ -290,367 +230,7 @@
        
        at endReadableNT (_stream_readable.js:921:12)
    
-   19) The form for creating new events should display errors to the user when the hour is less than 0
-   
-       Error page should contain form errors.
-       
-       at Request._callback (test/test.js:481:16)
-       
-       480 |         var formErrors = window.document.querySelector('ul.form-errors');
-       481 |         assert.ok(formErrors, 'Error page should contain form errors.');
-       482 |         var errorListItems = formErrors.getElementsByTagName('li');
-       
-       at Request.self.callback (node_modules/request/request.js:187:22)
-       
-       186 |       self._callbackCalled = true
-       187 |       self._callback.apply(self, arguments)
-       188 |     }
-       
-       at Request.<anonymous> (node_modules/request/request.js:1048:10)
-       
-       1047 |     }
-       1048 |     self.emit('complete', response, response.body)
-       1049 |   })
-       
-       at IncomingMessage.<anonymous> (node_modules/request/request.js:969:12)
-       
-       968 |     responseContent.on('end', function (chunk) {
-       969 |       self.emit('end', chunk)
-       970 |     })
-       
-       at endReadableNT (_stream_readable.js:921:12)
-   
-   18) The form for creating new events should display errors to the user when the hour is more than 23
-   
-       Error page should contain form errors.
-       
-       at Request._callback (test/test.js:481:16)
-       
-       480 |         var formErrors = window.document.querySelector('ul.form-errors');
-       481 |         assert.ok(formErrors, 'Error page should contain form errors.');
-       482 |         var errorListItems = formErrors.getElementsByTagName('li');
-       
-       at Request.self.callback (node_modules/request/request.js:187:22)
-       
-       186 |       self._callbackCalled = true
-       187 |       self._callback.apply(self, arguments)
-       188 |     }
-       
-       at Request.<anonymous> (node_modules/request/request.js:1048:10)
-       
-       1047 |     }
-       1048 |     self.emit('complete', response, response.body)
-       1049 |   })
-       
-       at IncomingMessage.<anonymous> (node_modules/request/request.js:969:12)
-       
-       968 |     responseContent.on('end', function (chunk) {
-       969 |       self.emit('end', chunk)
-       970 |     })
-       
-       at endReadableNT (_stream_readable.js:921:12)
-   
-   17) The form for creating new events should display errors to the user when the hour is not an integer
-   
-       Error page should contain form errors.
-       
-       at Request._callback (test/test.js:481:16)
-       
-       480 |         var formErrors = window.document.querySelector('ul.form-errors');
-       481 |         assert.ok(formErrors, 'Error page should contain form errors.');
-       482 |         var errorListItems = formErrors.getElementsByTagName('li');
-       
-       at Request.self.callback (node_modules/request/request.js:187:22)
-       
-       186 |       self._callbackCalled = true
-       187 |       self._callback.apply(self, arguments)
-       188 |     }
-       
-       at Request.<anonymous> (node_modules/request/request.js:1048:10)
-       
-       1047 |     }
-       1048 |     self.emit('complete', response, response.body)
-       1049 |   })
-       
-       at IncomingMessage.<anonymous> (node_modules/request/request.js:969:12)
-       
-       968 |     responseContent.on('end', function (chunk) {
-       969 |       self.emit('end', chunk)
-       970 |     })
-       
-       at endReadableNT (_stream_readable.js:921:12)
-   
-   16) The form for creating new events should display errors to the user when the day is less than 1
-   
-       Error page should contain form errors.
-       
-       at Request._callback (test/test.js:481:16)
-       
-       480 |         var formErrors = window.document.querySelector('ul.form-errors');
-       481 |         assert.ok(formErrors, 'Error page should contain form errors.');
-       482 |         var errorListItems = formErrors.getElementsByTagName('li');
-       
-       at Request.self.callback (node_modules/request/request.js:187:22)
-       
-       186 |       self._callbackCalled = true
-       187 |       self._callback.apply(self, arguments)
-       188 |     }
-       
-       at Request.<anonymous> (node_modules/request/request.js:1048:10)
-       
-       1047 |     }
-       1048 |     self.emit('complete', response, response.body)
-       1049 |   })
-       
-       at IncomingMessage.<anonymous> (node_modules/request/request.js:969:12)
-       
-       968 |     responseContent.on('end', function (chunk) {
-       969 |       self.emit('end', chunk)
-       970 |     })
-       
-       at endReadableNT (_stream_readable.js:921:12)
-   
-   15) The form for creating new events should display errors to the user when the day is more than 31
-   
-       Error page should contain form errors.
-       
-       at Request._callback (test/test.js:481:16)
-       
-       480 |         var formErrors = window.document.querySelector('ul.form-errors');
-       481 |         assert.ok(formErrors, 'Error page should contain form errors.');
-       482 |         var errorListItems = formErrors.getElementsByTagName('li');
-       
-       at Request.self.callback (node_modules/request/request.js:187:22)
-       
-       186 |       self._callbackCalled = true
-       187 |       self._callback.apply(self, arguments)
-       188 |     }
-       
-       at Request.<anonymous> (node_modules/request/request.js:1048:10)
-       
-       1047 |     }
-       1048 |     self.emit('complete', response, response.body)
-       1049 |   })
-       
-       at IncomingMessage.<anonymous> (node_modules/request/request.js:969:12)
-       
-       968 |     responseContent.on('end', function (chunk) {
-       969 |       self.emit('end', chunk)
-       970 |     })
-       
-       at endReadableNT (_stream_readable.js:921:12)
-   
-   14) The form for creating new events should display errors to the user when the day is not an integer
-   
-       Error page should contain form errors.
-       
-       at Request._callback (test/test.js:481:16)
-       
-       480 |         var formErrors = window.document.querySelector('ul.form-errors');
-       481 |         assert.ok(formErrors, 'Error page should contain form errors.');
-       482 |         var errorListItems = formErrors.getElementsByTagName('li');
-       
-       at Request.self.callback (node_modules/request/request.js:187:22)
-       
-       186 |       self._callbackCalled = true
-       187 |       self._callback.apply(self, arguments)
-       188 |     }
-       
-       at Request.<anonymous> (node_modules/request/request.js:1048:10)
-       
-       1047 |     }
-       1048 |     self.emit('complete', response, response.body)
-       1049 |   })
-       
-       at IncomingMessage.<anonymous> (node_modules/request/request.js:969:12)
-       
-       968 |     responseContent.on('end', function (chunk) {
-       969 |       self.emit('end', chunk)
-       970 |     })
-       
-       at endReadableNT (_stream_readable.js:921:12)
-   
-   13) The form for creating new events should display errors to the user when the month is less than 0
-   
-       Error page should contain form errors.
-       
-       at Request._callback (test/test.js:481:16)
-       
-       480 |         var formErrors = window.document.querySelector('ul.form-errors');
-       481 |         assert.ok(formErrors, 'Error page should contain form errors.');
-       482 |         var errorListItems = formErrors.getElementsByTagName('li');
-       
-       at Request.self.callback (node_modules/request/request.js:187:22)
-       
-       186 |       self._callbackCalled = true
-       187 |       self._callback.apply(self, arguments)
-       188 |     }
-       
-       at Request.<anonymous> (node_modules/request/request.js:1048:10)
-       
-       1047 |     }
-       1048 |     self.emit('complete', response, response.body)
-       1049 |   })
-       
-       at IncomingMessage.<anonymous> (node_modules/request/request.js:969:12)
-       
-       968 |     responseContent.on('end', function (chunk) {
-       969 |       self.emit('end', chunk)
-       970 |     })
-       
-       at endReadableNT (_stream_readable.js:921:12)
-   
-   12) The form for creating new events should display errors to the user when the month is more than 11
-   
-       Error page should contain form errors.
-       
-       at Request._callback (test/test.js:481:16)
-       
-       480 |         var formErrors = window.document.querySelector('ul.form-errors');
-       481 |         assert.ok(formErrors, 'Error page should contain form errors.');
-       482 |         var errorListItems = formErrors.getElementsByTagName('li');
-       
-       at Request.self.callback (node_modules/request/request.js:187:22)
-       
-       186 |       self._callbackCalled = true
-       187 |       self._callback.apply(self, arguments)
-       188 |     }
-       
-       at Request.<anonymous> (node_modules/request/request.js:1048:10)
-       
-       1047 |     }
-       1048 |     self.emit('complete', response, response.body)
-       1049 |   })
-       
-       at IncomingMessage.<anonymous> (node_modules/request/request.js:969:12)
-       
-       968 |     responseContent.on('end', function (chunk) {
-       969 |       self.emit('end', chunk)
-       970 |     })
-       
-       at endReadableNT (_stream_readable.js:921:12)
-   
-   11) The form for creating new events should display errors to the user when the month is not an integer
-   
-       Error page should contain form errors.
-       
-       at Request._callback (test/test.js:481:16)
-       
-       480 |         var formErrors = window.document.querySelector('ul.form-errors');
-       481 |         assert.ok(formErrors, 'Error page should contain form errors.');
-       482 |         var errorListItems = formErrors.getElementsByTagName('li');
-       
-       at Request.self.callback (node_modules/request/request.js:187:22)
-       
-       186 |       self._callbackCalled = true
-       187 |       self._callback.apply(self, arguments)
-       188 |     }
-       
-       at Request.<anonymous> (node_modules/request/request.js:1048:10)
-       
-       1047 |     }
-       1048 |     self.emit('complete', response, response.body)
-       1049 |   })
-       
-       at IncomingMessage.<anonymous> (node_modules/request/request.js:969:12)
-       
-       968 |     responseContent.on('end', function (chunk) {
-       969 |       self.emit('end', chunk)
-       970 |     })
-       
-       at endReadableNT (_stream_readable.js:921:12)
-   
-   10) The form for creating new events should display errors to the user when the year is less than 2015
-   
-       Error page should contain form errors.
-       
-       at Request._callback (test/test.js:481:16)
-       
-       480 |         var formErrors = window.document.querySelector('ul.form-errors');
-       481 |         assert.ok(formErrors, 'Error page should contain form errors.');
-       482 |         var errorListItems = formErrors.getElementsByTagName('li');
-       
-       at Request.self.callback (node_modules/request/request.js:187:22)
-       
-       186 |       self._callbackCalled = true
-       187 |       self._callback.apply(self, arguments)
-       188 |     }
-       
-       at Request.<anonymous> (node_modules/request/request.js:1048:10)
-       
-       1047 |     }
-       1048 |     self.emit('complete', response, response.body)
-       1049 |   })
-       
-       at IncomingMessage.<anonymous> (node_modules/request/request.js:969:12)
-       
-       968 |     responseContent.on('end', function (chunk) {
-       969 |       self.emit('end', chunk)
-       970 |     })
-       
-       at endReadableNT (_stream_readable.js:921:12)
-   
-   9) The form for creating new events should display errors to the user when the year is more than 2016
-   
-       Error page should contain form errors.
-       
-       at Request._callback (test/test.js:481:16)
-       
-       480 |         var formErrors = window.document.querySelector('ul.form-errors');
-       481 |         assert.ok(formErrors, 'Error page should contain form errors.');
-       482 |         var errorListItems = formErrors.getElementsByTagName('li');
-       
-       at Request.self.callback (node_modules/request/request.js:187:22)
-       
-       186 |       self._callbackCalled = true
-       187 |       self._callback.apply(self, arguments)
-       188 |     }
-       
-       at Request.<anonymous> (node_modules/request/request.js:1048:10)
-       
-       1047 |     }
-       1048 |     self.emit('complete', response, response.body)
-       1049 |   })
-       
-       at IncomingMessage.<anonymous> (node_modules/request/request.js:969:12)
-       
-       968 |     responseContent.on('end', function (chunk) {
-       969 |       self.emit('end', chunk)
-       970 |     })
-       
-       at endReadableNT (_stream_readable.js:921:12)
-   
-   8) The form for creating new events should display errors to the user when the year is not an integer
-   
-       Error page should contain form errors.
-       
-       at Request._callback (test/test.js:481:16)
-       
-       480 |         var formErrors = window.document.querySelector('ul.form-errors');
-       481 |         assert.ok(formErrors, 'Error page should contain form errors.');
-       482 |         var errorListItems = formErrors.getElementsByTagName('li');
-       
-       at Request.self.callback (node_modules/request/request.js:187:22)
-       
-       186 |       self._callbackCalled = true
-       187 |       self._callback.apply(self, arguments)
-       188 |     }
-       
-       at Request.<anonymous> (node_modules/request/request.js:1048:10)
-       
-       1047 |     }
-       1048 |     self.emit('complete', response, response.body)
-       1049 |   })
-       
-       at IncomingMessage.<anonymous> (node_modules/request/request.js:969:12)
-       
-       968 |     responseContent.on('end', function (chunk) {
-       969 |       self.emit('end', chunk)
-       970 |     })
-       
-       at endReadableNT (_stream_readable.js:921:12)
-   
-   7) The new event creation page should have the appropriate options for select elements
+   5) The new event creation page should have the appropriate options for select elements
    
        Should have select input for year
        
@@ -690,7 +270,7 @@
        322 |           var select = this.browser.query('select[name="' + fieldName + '"]');
        
    
-   6) The new event creation page should use select inputs for year, month, day, hour and minute form elements.
+   4) The new event creation page should use select inputs for year, month, day, hour and minute form elements.
    
        Should have select input for year at /events/new
        
@@ -701,7 +281,7 @@
        310 |     }
        
    
-   5) The event detail pages should reject RSVPs from non-Yale addresses
+   3) The event detail pages should reject RSVPs from non-Yale addresses
    
        No INPUT matching 'email'
        
@@ -751,7 +331,7 @@
        20 |     if(domain)domain.exit();
        
    
-   4) The event detail pages should allow Yale users to RSVP
+   2) The event detail pages should allow Yale users to RSVP
    
        No INPUT matching 'email'
        
@@ -801,7 +381,7 @@
        20 |     if(domain)domain.exit();
        
    
-   3) The event detail pages should exist for each event and should have title, image, etc
+   1) The event detail pages should exist for each event and should have title, image, etc
    
        Couldn't retreive all events at /events/:id.
        
@@ -890,73 +470,3 @@
        19 |     fn(); // <- currently we use it only for Promise - try / catch not required
        20 |     if(domain)domain.exit();
        
-   
-   2) The API should allow for searching events by title
-   
-       API not found at /api/events
-       
-       + expected - actual
-       
-       -false
-       +true
-       
-       at Request._callback (test/test.js:173:14)
-       
-       172 |     request(url, function (error, response, body) {
-       173 |       assert.ok(response.statusCode !== 404, 'API not found at /api/events');
-       174 |       var data = JSON.parse(body);
-       
-       at Request.self.callback (node_modules/request/request.js:187:22)
-       
-       186 |       self._callbackCalled = true
-       187 |       self._callback.apply(self, arguments)
-       188 |     }
-       
-       at Request.<anonymous> (node_modules/request/request.js:1048:10)
-       
-       1047 |     }
-       1048 |     self.emit('complete', response, response.body)
-       1049 |   })
-       
-       at IncomingMessage.<anonymous> (node_modules/request/request.js:969:12)
-       
-       968 |     responseContent.on('end', function (chunk) {
-       969 |       self.emit('end', chunk)
-       970 |     })
-       
-       at endReadableNT (_stream_readable.js:921:12)
-   
-   1) The API should return an array of upcoming events in JSON format
-   
-       API not found at /api/events
-       
-       + expected - actual
-       
-       -false
-       +true
-       
-       at Request._callback (test/test.js:161:14)
-       
-       160 |       assert.ok(body !== 'null', 'JSON data has no contents.');
-       161 |       assert.ok(response.statusCode !== 404, 'API not found at /api/events');
-       162 |       var data = JSON.parse(body);
-       
-       at Request.self.callback (node_modules/request/request.js:187:22)
-       
-       186 |       self._callbackCalled = true
-       187 |       self._callback.apply(self, arguments)
-       188 |     }
-       
-       at Request.<anonymous> (node_modules/request/request.js:1048:10)
-       
-       1047 |     }
-       1048 |     self.emit('complete', response, response.body)
-       1049 |   })
-       
-       at IncomingMessage.<anonymous> (node_modules/request/request.js:969:12)
-       
-       968 |     responseContent.on('end', function (chunk) {
-       969 |       self.emit('end', chunk)
-       970 |     })
-       
-       at endReadableNT (_stream_readable.js:921:12)
