@@ -58,7 +58,7 @@ function checkIntRange(request, fieldName, minVal, maxVal, contextData){
   } else {
   value = parseInt(request.body[fieldName], 10);
   if (value > maxVal || value < minVal) {
-    contextData.errors.push('Your ' + fieldName + ' should be in the range ' + minVal + '-' + maxVal );
+    contextData.errors.push('Your ' + fieldName + ' should be in the range ' + minVal + '-' + maxVal + '.');
       }
     }
     return value;
@@ -69,6 +69,7 @@ function checkIntRange(request, fieldName, minVal, maxVal, contextData){
  * Validates the form and adds the new event to
  * our global list of events.
  */
+ 
 function saveEvent(request, response){
   var contextData = {errors: []};
 
@@ -78,6 +79,14 @@ function saveEvent(request, response){
 
   if (validator.isLength(request.body.location, 5, 50) === false) {
     contextData.errors.push('Your location should be between 5 and 100 letters.');
+  }
+
+  if (validator.isURL(request.body.image) === false){
+    contextData.errors.push('Your image should be an URL.')
+  }
+  
+  if (request.body.image.match(/\.(png|gif)$/) === null){ 
+    contextData.errors.push('Your image should be a gif or png.')
   }
 
   var year = checkIntRange(request, 'year', 2015, 2016, contextData);
