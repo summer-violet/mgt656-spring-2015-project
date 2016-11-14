@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block mainContent %}
+
+<p> Events description</p>
+<ul>
+    <li> {{event.title}}</li>
+    <li> {{event.date|prettyDate}}</li>
+    <li> {{event.location}} </li>
+    <li> {{event.attending.length}} attending so far. </li>
+
+</ul>
+<img id="eventimage" src="{{event.image}}">
+{% endblock %}
+
+<!--
+ id: 0,
+    title: 'SOM House Party',
+    // Note that JavaScript months are zero-indexed,
+    // so, month zero is January. This is Jan 17th
+    // 2013 at 4:30pm local time.
+    date:   new Date(2017, 0, 17, 16, 30, 0),
+    image: 'http://i.imgur.com/pXjrQ.gif',
+    location: 'Kyle \'s house',
+    attending: ['kyle.jensen@yale.edu', 'kim.kardashian@yale.edu']
+  },
+  //-->
