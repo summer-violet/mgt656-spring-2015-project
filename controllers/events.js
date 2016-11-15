@@ -93,9 +93,11 @@ function saveEvent(request, response){
   var month = checkIntRange(request, 'month', 0, 11, contextData);
   var day = checkIntRange(request, 'day', 1, 31, contextData);
   var hour = checkIntRange(request, 'hour', 0, 23, contextData);
+  var minute = checkIntRange(request, 'minute', 0, 60, contextData);
 
   if (contextData.errors.length === 0) {
     var newEvent = {
+      id: events.all.length,
       title: request.body.title,
       location: request.body.location,
       image: request.body.image,
