@@ -109,16 +109,9 @@ function saveEvent(request, response){
   }
 }
 
-function GetQueryString(name) {
-   var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)","i");
-   var r = window.location.search.substr(1).match(reg);
-   if (r!=null) return (r[2]); return null;
-}
 
 function eventDetail (request, response) {
-  //var ev = events.getById(parseInt(request.params.id));
-  //var evid = GetQueryString('id')
-  var ev = events.getById(parseInt(1));
+  var ev = events.getById(parseInt(request.params.id));
   if (ev === null) {
     response.status(404).send('No such event');
   }
