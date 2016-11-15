@@ -8,9 +8,30 @@
     <li> {{event.date|prettyDate}}</li>
     <li> {{event.location}} </li>
     <li> {{event.attending.length}} attending so far. </li>
+    <li> {{event.attending}} </li>
 
 </ul>
 <img id="eventimage" src="{{event.image}}">
+
+
+{% if errors %}
+    <div class="form-errors">
+      <p>Error!</p>
+      <ul class="form-errors">
+        {% for error in errors %}
+          <li>{{error}}</li>
+        {% endfor %}
+      </ul>
+    </div>
+  {% endif %}
+
+
+	<form id="email" method="POST">
+    <label for="email">RSVP with your Yale email:</label>
+    <input type="email" name="email">
+    
+     <input type="submit">
+  </form>
 {% endblock %}
 
 <!--
