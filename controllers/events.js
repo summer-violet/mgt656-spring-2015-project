@@ -121,29 +121,35 @@ function eventDetail (request, response) {
 }
 
 function rsvp (request, response){
+  var contextData = {errors: []};
   var ev = events.getById(parseInt(request.params.id));
   if (ev === null) {
     response.status(404).send('No such event');
   }
 
-  var email = request.body.email;                                                 //Check this!
-
- if (request.body.email.match(/@yale.edu$/) === null){                            //Check this!
-    contextData.errors.push('Email ' + email + ' not successfully RSVP\'d.');      //^^
-  }
-
-  if(validator.isEmail(request.body.email)){
-    ev.attending.push(request.body.email);
-    response.redirect('/events/' + ev.id);
-  }else{
+  var email = request.body.email;
+  var isEmail = validator.isEmail(email);
+  var isYale = email.toLowerCase().endsWith('@yale.edu')
+ 
+ if (isEmail === null){ 
     var contextData = {errors: [], event: ev};
     contextData.errors.push('Invalid email');
-    response.render('event-detail.html', contextData);    
-  }
-
+     response.render('event-detail.html', contextData);
+   } 
+   else {
+     
+     if(isYale === true){
+     ev.attending.push(request.body.email);
+    response.redirect('/events/' + ev.id);
+        }
+   
+   else {
+    var contextData = {errors: [], event: ev};
+     contextData.errors.push('Email ' + email + ' not successfully RSVP\'d.');
+        response.render('event-detail.html', contextData);
+    }
+  }  
 }
-
-
 
 function api(request, response){
   var output = {events: []};
