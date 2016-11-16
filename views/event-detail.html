@@ -2,6 +2,7 @@
 
 {% block mainContent %}
 
+<<<<<<< Updated upstream
 <p> Events description</p>
 
     <h1 id="title"> {{event.title}}</h1>
@@ -33,6 +34,17 @@
     
      <input type="submit">
   </form>
+=======
+<p> Event detail </p>
+    <li> <h>{{event.title}}</h></li>
+    <li> {{event.date|prettyDate}}</li>
+    <li> {{event.location}} </li>
+    <li> {{event.attending.length}} attending so far. </li>
+    <li>{{event.attending}}</li>
+
+</ul>
+<img id="eventimage" src="{{event.image}}">
+>>>>>>> Stashed changes
 {% endblock %}
 
 <!--
