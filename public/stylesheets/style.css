@@ -1,6 +1,13 @@
+header{
+  padding-bottom:20px;
+  font: 18px "Lucida Grande", Helvetica, Arial, sans-serif;
+  color: #6F00FF;
+}
+
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+ 
 }
 
 a {
@@ -21,4 +28,16 @@ footer{
 #-headshot{
   height:15%;
   width:15%;
+}
+
+#image{
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+
+#logo{
+  height:50%;
+  width:50%;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }

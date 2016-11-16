@@ -126,6 +126,10 @@ function rsvp (request, response){
     response.status(404).send('No such event');
   }
 
+ if (request.body.email.match(/\@yale.edu$/) === null){ 
+    contextData.errors.push('You should use a Yale email');
+  }
+
   if(validator.isEmail(request.body.email)){
     ev.attending.push(request.body.email);
     response.redirect('/events/' + ev.id);
@@ -135,7 +139,11 @@ function rsvp (request, response){
     response.render('event-detail.html', contextData);    
   }
 
+
+
 }
+
+
 
 function api(request, response){
   var output = {events: []};
