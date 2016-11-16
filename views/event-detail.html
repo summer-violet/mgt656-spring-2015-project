@@ -4,10 +4,10 @@
 
 {% if errors %}
     <div class="form-errors">
-      <p>Error!</p>
+      <p>Email error!</p>
       <ul class="form-errors">
         {% for error in errors %}
-          <li>{{error}}</li>
+          <li>{{errors}}</li>
         {% endfor %}
       </ul>
     </div>
@@ -16,12 +16,12 @@
 <p> Events description</p>
 
     <h1 id="title"> {{event.title}}</h1>
-    <span id="date"> {{event.date|prettyDate}}</span>
+    <span id="date"> {{event.date|prettyDate}}</span> at
     <span id="location"> {{event.location}} </span>
+    <p>Attendees:</p>
     <ul id="attendees">
         <li> {{event.attending}} </li>
         </ul>
-
 
 <img id="image" src="{{event.image}}">
 
@@ -40,15 +40,4 @@
   
 {% endblock %}
 
-<!--
- id: 0,
-    title: 'SOM House Party',
-    // Note that JavaScript months are zero-indexed,
-    // so, month zero is January. This is Jan 17th
-    // 2013 at 4:30pm local time.
-    date:   new Date(2017, 0, 17, 16, 30, 0),
-    image: 'http://i.imgur.com/pXjrQ.gif',
-    location: 'Kyle \'s house',
-    attending: ['kyle.jensen@yale.edu', 'kim.kardashian@yale.edu']
-  },
-  //-->
+
