@@ -1,12 +1,13 @@
 header{
-  padding-bottom:20px;
-  font: 18px "Lucida Grande", Helvetica, Arial, sans-serif;
-  color: #6F00FF;
+  font:20px;
 }
 
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 12px 
+  color: #4A148C;
+  font-family: verdana;
+  font-weight: bold;
 }
 
 a {
@@ -18,25 +19,27 @@ a {
 }
 
 footer{
-  background-color: #eee;
+  background-color: #CE93D8;
   padding: 1em;
   border: 1px solid #ddd;
   margin: 2em 0;
+  color: #4A148C;
 }
 
 #-headshot{
-  height:15%;
-  width:15%;
+  height:12%;
+  width:12%;
 }
 
 #image{
-  padding-top: 10px;
+  padding-top: 5px;
   padding-bottom: 20px;
 }
 
 #logo{
   height:50%;
   width:100%;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 15 pix;
+  padding-bottom:15 pix;
 }
+

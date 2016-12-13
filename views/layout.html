@@ -4,10 +4,23 @@
     <title>{{ title }}</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' />
+    <style> 
+  html { 
+  background: url(https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSRLa_LHsrvzp6R26Zt97I-ciG6roi-Jd_2vyBzDN1EUOjq7t3x) no-repeat center fixed; 
+  background-size: cover;
+  }
+
+  body { 
+  color:#4A148C; 
+  font-family: verdana;
+  font-weight: bold;
+  font-size:18px;
+  }
+</style>
   </head>
 
 	<body class="container">
-
+  
     {% block header %}
       <header>Summer Violet HostCentral</header>
     {% endblock %}
@@ -18,7 +31,7 @@
 
     {% block footer %}
       <footer>
-        <a href="/">Home</a> &gt; <a href="/about">About us</a>
+        <a href="/">Home</a> &gt; <a href="/about">About Us</a>
         
       </footer>
     {% endblock %}
